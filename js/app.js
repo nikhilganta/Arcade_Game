@@ -1,4 +1,5 @@
 // Enemies our player must avoid
+// Defining Enemies of the game
 var Enemy = function(x, y, speed) {
     this.x = x;
     this.y = y;
@@ -18,21 +19,23 @@ Enemy.prototype.update = function(dt) {
     // which will ensure the game runs at the same speed for
     // all computers.
     this.x += this.speed * dt;
-    if(this.x > 101*5) {
-      this.x = -100;
-      /* To make the speeds of the Enemies move at random
-      speeds.*/
-      this.speed = 100 + Math.floor(Math.random() * 400);
+    /* If the enemy passes through the end a delay of coordinate
+    100 is given to start again.*/
+    if (this.x > 101 * 5) {
+        this.x = -100;
+        /* To make the speeds of the Enemies move at random
+        speeds when freshly started */
+        this.speed = 100 + Math.floor(Math.random() * 400);
     }
 
     /* when the player collides with the enemy the game
     gets reset. */
     if (player.x < this.x + 80 &&
-       player.x + 60 > this.x &&
-       player.y < this.y + 20 &&
-       player.y + 20 > this.y) {
-       player.x = 101*2;
-       player.y = 83*5 - 10;
+        player.x + 60 > this.x &&
+        player.y < this.y + 20 &&
+        player.y + 20 > this.y) {
+        player.x = 101 * 2;
+        player.y = 83 * 5 - 10;
     }
 };
 
@@ -44,31 +47,30 @@ Enemy.prototype.render = function() {
 // Now write your own player class
 // This class requires an update(), render() and
 // a handleInput() method.
+// Defining the player of the game
 var Player = function(x, y) {
-  this.x = x;
-  this.y = y;
-
-  this.sprite = 'images/char-boy.png';
+    this.x = x;
+    this.y = y;
+    this.sprite = 'images/char-boy.png';
 };
 
 Player.prototype.update = function() {
 
-    //Player cannot cross the boundaries.
-    if(this.y > 83*5) {
-      this.y = 83*5 - 10;
+    //Player should not cross the boundaries.
+    if (this.y > 83 * 5) {
+        this.y = 83 * 5 - 10;
     }
-    if(this.x > 101*4) {
-      this.x = 101*4;
+    if (this.x > 101 * 4) {
+        this.x = 101 * 4;
     }
-    if(this.x < 0) {
-      this.x = 0;
+    if (this.x < 0) {
+        this.x = 0;
     }
-
     /* If the player reaches water the player wins
     and the game resets back to the start position */
-    if(this.y < 0) {
-      this.x = 101*2;
-      this.y = 83*5 - 10;
+    if (this.y < 0) {
+        this.x = 101 * 2;
+        this.y = 83 * 5 - 10;
     }
 };
 
@@ -78,7 +80,7 @@ Player.prototype.render = function() {
 
 //keyboard operations for moving the player.
 Player.prototype.handleInput = function(keyPress) {
-  switch (keyPress) {
+    switch (keyPress) {
         case "left":
             this.x -= 101;
             break;
@@ -97,8 +99,8 @@ Player.prototype.handleInput = function(keyPress) {
 // Place all enemy objects in an array called allEnemies
 // Place the player object in a variable called player
 var allEnemies = [];
-var enemyPosition = [83*1 - 20, 83*1 - 20, 83*2 - 20, 83*2 - 20, 83*3 - 20, 83*3 - 20];
-var player = new Player(101*2, 83*5 - 10);
+var enemyPosition = [83 * 1 - 20, 83 * 1 - 20, 83 * 2 - 20, 83 * 2 - 20, 83 * 3 - 20, 83 * 3 - 20];
+var player = new Player(101 * 2, 83 * 5 - 10);
 
 enemyPosition.forEach(function(positionY) {
     var enemy = new Enemy(0, positionY, 100 + Math.floor(Math.random() * 400));
