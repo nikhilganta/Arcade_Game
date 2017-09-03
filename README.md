@@ -5,3 +5,8 @@ In this game you have a **Player** and **Enemies** which are bugs in this case. 
 
 ## Instructions to play the GAME..
 The player is enabled with the direction keys on the keyboard(`left`, `right`, `up` and `down`).
+
+## Run the Game
+Here is the [link](https://cdn.rawgit.com/nikhilganta/Udacity-Project-6-Classic-Arcade-Game-CLone/ceceade1/index.html) to the game.
+- Open the link
+- and Get Started.
