@@ -8,6 +8,10 @@ The player is enabled with the direction keys on the keyboard(`left`, `right`, `
 
 The player should try not to collide with the bugs and cross the paved roads and reach the water blocks.
 
+If you get collided the game gets reset back to start position.
+
+Once you reach the Water blocks you will win and resets the game back so that you can play it again.
+
 ## Run the Game
 Here is the [link](https://cdn.rawgit.com/nikhilganta/Udacity-Project-6-Classic-Arcade-Game-Clone/feb93d42/index.html) to the game.
 - Open the link
