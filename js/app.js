@@ -1,3 +1,7 @@
+// The width of the block is 101.
+// The height of the block is 83
+// Values used ahead for calculations
+
 // Enemies our player must avoid
 // Defining Enemies of the game
 var Enemy = function(x, y, speed) {
@@ -25,7 +29,7 @@ Enemy.prototype.update = function(dt) {
         this.x = -100;
         /* To make the speeds of the Enemies move at random
         speeds when freshly started */
-        this.speed = 100 + Math.floor(Math.random() * 400);
+        this.speed = 150 + Math.floor(Math.random() * 300);
     }
 
     /* when the player collides with the enemy the game
@@ -57,14 +61,14 @@ var Player = function(x, y) {
 Player.prototype.update = function() {
 
     //Player should not cross the boundaries.
-    if (this.y > 83 * 5) {
-        this.y = 83 * 5 - 10;
-    }
     if (this.x > 101 * 4) {
         this.x = 101 * 4;
     }
     if (this.x < 0) {
         this.x = 0;
+    }
+    if (this.y > 83 * 5) {
+        this.y = 83 * 5 - 10;
     }
     /* If the player reaches water the player wins
     and the game resets back to the start position */
@@ -99,11 +103,11 @@ Player.prototype.handleInput = function(keyPress) {
 // Place all enemy objects in an array called allEnemies
 // Place the player object in a variable called player
 var allEnemies = [];
-var enemyPosition = [83 * 1 - 20, 83 * 1 - 20, 83 * 2 - 20, 83 * 2 - 20, 83 * 3 - 20, 83 * 3 - 20];
+var enemyPositionY = [83 * 1 - 20, 83 * 1 - 20, 83 * 2 - 20, 83 * 2 - 20, 83 * 3 - 20, 83 * 3 - 20];
 var player = new Player(101 * 2, 83 * 5 - 10);
 
-enemyPosition.forEach(function(positionY) {
-    var enemy = new Enemy(0, positionY, 100 + Math.floor(Math.random() * 400));
+enemyPositionY.forEach(function(positionY) {
+    var enemy = new Enemy(0, positionY, 150 + Math.floor(Math.random() * 300));
     allEnemies.push(enemy);
 });
 
