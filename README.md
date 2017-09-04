@@ -9,6 +9,6 @@ The player is enabled with the direction keys on the keyboard(`left`, `right`, `
 The player should try not to collide with the bugs and cross the paved roads and reach the water blocks.
 
 ## Run the Game
-Here is the [link](https://cdn.rawgit.com/nikhilganta/Udacity-Project-6-Classic-Arcade-Game-CLone/ceceade1/index.html) to the game.
+Here is the [link](https://cdn.rawgit.com/nikhilganta/Udacity-Project-6-Classic-Arcade-Game-Clone/feb93d42/index.html) to the game.
 - Open the link
 - and Get Started.
